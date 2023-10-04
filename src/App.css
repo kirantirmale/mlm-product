@@ -1,7 +1,7 @@
-.App {
-  text-align: center;
-}
 
+Link{
+  text-decoration: underline;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,47 +36,11 @@
     transform: rotate(360deg);
   }
 }
-  /* ..................LOGIN PAGE..................... */
+ 
 
-  .Auth-form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-  }
+  /* .....................login................... */
 
-  .Auth-form {
-    width: 420px;
-    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    border-radius: 8px;
-    background-color: white;
-  }
-
-  .Auth-form-content {
-    padding-left: 12%;
-    padding-right: 12%;
-  }
-
-  .Auth-form-title {
-    text-align: center;
-    margin-bottom: 1em;
-    font-size: 24px;
-    color: rgb(34, 34, 34);
-    font-weight: 800;
-  }
-
-  label {
-    font-size: 14px;
-    font-weight: 600;
-    color: rgb(34, 34, 34);
-  }
-
-  /* .....................Sign Up................... */
-
-.container {
+.container1 {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   display: flex;
@@ -85,7 +49,7 @@
   min-height: 100vh;
 }
 
-form {
+.form1{
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -120,3 +84,28 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+  /* .....................signup................... */
+
+
+.gradient-custom-3 {
+  /* fallback for old browsers */
+  background: #84fab0;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+  }
+  .gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #84fab0;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+  }
+

@@ -1,11 +1,10 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 
 
 function Login() {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   let token = ''
 
@@ -41,10 +40,10 @@ const navigate = useNavigate();
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(obj)
     };
-    let responce = await fetch('http://localhost:4000/api/auth/login', requestOptions).then((res)=>{return res.json()})
+    let responce = await fetch('http://localhost:4000/api/auth/login', requestOptions).then((res) => { return res.json() })
     if (responce.status == true) {
       localStorage.setItem('token', responce.token)
-      navigate('/product')
+      navigate('/home')
     } else {
       alert(responce.message)
     }
@@ -53,48 +52,83 @@ const navigate = useNavigate();
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-        navigate("/product") 
+      navigate("/home")
     } else {
-        navigate("/login") 
+      navigate("/login")
     }
-}, []);
+  }, []);
 
   return (
-    <div className="Auth-form-container">
-      <form className="Auth-form">
-        <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Login</h3>
-          <div className="form-group mt-3">
-            <label>Email address</label>
-            <input
-              type="email"
-              name='email'
-              className="form-control mt-1"
-              placeholder="Enter email"
-              onChange={getValue}
-            />
+    < >
+      <section class="h-100 gradient-form" Style="background-color: #eee;">
+        <div class="container1 py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+              <div class="card rounded-3 text-black">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="card-body p-md-5 mx-md-4">
+
+                      <div class="text-center">
+                        {/* <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                          style="width: 185px;" alt="logo"> */}
+                        <h4 class="mt-1 mb-5 pb-1">Welcome To My Website</h4>
+                      </div>
+
+                      <form className="form1">
+                        <p>Please login to your account</p>
+
+                        <div class="form-outline mb-4">
+                          <input type="email"
+                            name='email'
+                            className="form-control mt-1"
+                            placeholder="Enter email"
+                            onChange={getValue} class="form-control"
+                          />
+                          {/* <label class="form-label" for="form2Example11">Email</label> */}
+                        </div>
+
+                        <div class="form-outline mb-4">
+                          <input
+                            type="password"
+                            name='password'
+                            className="form-control mt-1"
+                            placeholder="Enter password"
+                            onChange={getValue} class="form-control" />
+                          {/* <label class="form-label" for="form2Example22">Password</label> */}
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1">
+                          <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" onClick={save}>Log
+                            in</button>
+                          <a class="text-muted" href="#!">Forgot password?</a>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-center pb-4">
+                          <p class="mb-0 me-2">Don't have an account?</p>
+                          <button type="button" class="btn btn-outline-danger"><Link to="/signup" class="btn ">Signup</Link></button>
+                        </div>
+
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                    <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                      <h4 class="mb-4">Kiran A Tirmale</h4>
+                      <p class="small mb-0"> <h6>Full Stack Developer</h6>
+                        To work as contributor in a challenging environment and strengthen my knowledge and skills to assure
+                        that my commitment to the job would yield better results..</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="form-group mt-3">
-            <label>Password</label>
-            <input
-              type="password"
-              name='password'
-              className="form-control mt-1"
-              placeholder="Enter password"
-              onChange={getValue}
-            />
-          </div>
-          <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary" onClick={save}>
-              Submit
-            </button>
-          </div>
-          <p className="forgot-password text-right mt-2">
-            Forgot <Link to="/signup">Signup Page</Link>
-          </p>
         </div>
-      </form>
-    </div>
+      </section>
+
+
+    </>
   )
 }
 
