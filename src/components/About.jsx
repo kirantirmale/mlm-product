@@ -1,7 +1,5 @@
 import React from 'react';
-import about from '../Images/about.jpg'
 import Layout from './Layout/Layout';
-import { Link } from 'react-router-dom';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -12,7 +10,6 @@ import { Box } from '@mui/material';
 const About = () => {
 
     return (<Layout>
-
         <div className='about' >
             <div className='headerContainer1'>
                 <h1 className=''>Welcome to My Food Website</h1>
